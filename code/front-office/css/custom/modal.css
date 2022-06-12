@@ -1,0 +1,26 @@
+.modal-dialog,
+.come-from-modal.right .modal-dialog {
+    position: fixed;
+    margin: auto;
+    height: 100%;
+    transform: translate3d(0%, 0, 0);
+}
+
+.come-from-modal.right .modal-content {
+    height: 100vh;
+    overflow-y: auto;
+    border-radius: 0px;
+}
+
+.come-from-modal.right .modal-body {
+    padding: auto;
+}
+
+.come-from-modal.right.fade .modal-dialog {
+    right: 0;
+    transition: opacity 0.3s linear, right 0.3s ease-out;
+}
+
+.come-from-modal.right.fade.in .modal-dialog {
+    right: 0;
+}

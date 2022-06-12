@@ -1,0 +1,71 @@
+{% extends "front-office/base.html.twig" %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('code/front-office/css/simple-calendar.scss') }}">
+{% endblock %}
+
+{% block navbar %}
+{% include "front-office/shared/_connexion.html.twig" %}
+{% include "front-office/shared/_navbar.html.twig" %}
+{% endblock %}
+
+{% block body %}
+<trigger>
+    <div class="container-fluid m-5 p-5">
+        <div class="row">
+            <div class="col-6">
+                <h1>PANIER</h1>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam tempore eligendi possimus ipsa qui
+                delectus dolore assumenda dolorum eum, vitae molestias reprehenderit obcaecati? Iste dolor illo,
+                laudantium
+                quis ducimus voluptates, asperiores vitae quo similique animi commodi distinctio quas. Illo qui
+                laudantium
+                incidunt neque dolor alias quasi sequi tempora dignissimos quod?
+            </div>
+            <div class="col-6">
+                <h1>CALENDRIER</h1>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam tempore eligendi possimus ipsa qui
+                delectus dolore assumenda dolorum eum, vitae molestias reprehenderit obcaecati? Iste dolor illo,
+                laudantium
+                quis ducimus voluptates, asperiores vitae quo similique animi commodi distinctio quas. Illo qui
+                laudantium
+                incidunt neque dolor alias quasi sequi tempora dignissimos quod?
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Réserver
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Choisissez une date</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                mettre un calendrier bootstrap
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                                <button type="button" class="btn btn-primary">Valider</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    {% include "front-office/shared/_footer.html.twig" %}
+
+    {% block script %}{% endblock %}
+
+    {% endblock %}

@@ -1,0 +1,39 @@
+{% set cpt = 0 %}
+{% set bool = true %}
+<div class="container">
+    <h2 class="text-sb-blue-energy fw-bold h3 pt-5 pb-3">Les dernières photos de shooting</h2>
+    <div id="partCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+        {% for photo in photos %}
+            {% if bool == true %}
+                <div class="carousel-item active">
+                    <div class="cards-wrapper">
+                {% set bool = false %}
+            {% elseif cpt == 0 %}
+                <div class="carousel-item">
+                    <div class="cards-wrapper">
+            {% endif %}
+            <div class="card card-d3 bg-none border-none mb-2">
+                {{ photo.num }}
+                <img src="{{ photo.link }}" class="card-img-square-top custom-index"
+                    alt="...">
+            </div>
+            {% if cpt == 3 %}
+                    </div>
+                </div>
+                {% set cpt = 0 %}
+            {% else %}
+                {% set cpt = cpt + 1 %}
+            {% endif %}
+        {% endfor %}
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#partCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#partCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>

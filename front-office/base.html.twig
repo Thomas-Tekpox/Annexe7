@@ -1,0 +1,78 @@
+{{ app.session.set('lastUrl', app.request.get('_route')) }}
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
+	<meta name="description"
+		content=" Le meilleur shooting photo pour particulier et entreprise. Offrez-vous le shooting photo de vos rêves, réalisé par des photographes professionnels à Paris.">
+	<meta name="robots" content="index, follow">
+	<title>
+		{% block title %}Shooting photo à Paris - Studio Bontant{% endblock %}
+	</title>
+	<!-- Tab Icon -->
+	<link rel="icon"
+		href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+	<!-- CSS -->
+	<link rel="stylesheet" href="{{ asset('code/front-office/css/bootstrap.css') }}">
+	<link rel="stylesheet" href="{{ asset('code/front-office/css/custom/navbar.css') }}">
+	<link rel="stylesheet" href="{{ asset('code/front-office/css/custom/modal.css') }}">
+	<!-- Other Styles -->
+	{% block stylesheets %}{% endblock %}
+</head>
+
+<body>
+	<header>
+		{% block navbar %}{% endblock %}
+	</header>
+	<main role="main">
+		{% block body %}{% endblock %}
+	</main>
+	<div class="modal modal-lg fade come-from-modal right" id="monCompte" tabindex="-1" role="dialog"
+		aria-labelledby="monCompteLabel">
+		<div class="modal-dialog d-flex" style="max-width: 100%; width: 30%;" role="document">
+			<div class="modal-content">
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-12 d-flex justify-content-end">
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+							</button>
+						</div>
+					</div>
+					<div class="row justify-content-md-center p-5">
+						<div class="col-10">
+							<h2 class="modal-title fw-bold text-sb-blue-energy" id="monCompteLabel">Mon espace</h2>
+							<p class="pt-3">Connectez vous à votre compte pour accéder à votre espace personnel ou
+								professionnel</p>
+
+							{% if connexion.login.error %}
+							<div>
+								{{ connexion.login.error.messageKey|trans(connexion.login.error.messageData, 'security') }}
+							</div>
+							{% endif %}
+
+							{{ form_start(connexion.login.form) }}
+
+							<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+							{{ form_row(connexion.login.form.email, { 'attr': {'value': connexion.login.last_username} }) }}
+
+							{{ form_row(connexion.login.form.password) }}
+
+							{{ form_row(connexion.login.form._remember_me) }}
+
+							<button type="submit" class="btn btn-success">Connexion</button>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<!-- JavaScript Bundle with Popper -->
+<script src="{{ asset('code/front-office/js/bootstrap.bundle.js') }}"></script>
+<!-- Other Scripts -->
+{% block scripts %}{% endblock %}
+
+</html>

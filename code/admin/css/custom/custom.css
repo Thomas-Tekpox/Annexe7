@@ -1,0 +1,42 @@
+/**
+*
+* Draggable list
+*
+*/
+
+.draggable-list li {
+    background-color: #fff;
+    display: flex;
+    flex: 1;
+}
+
+.draggable-list li:not(:last-of-type) {
+    border-bottom: 1px solid black;
+}
+
+.draggable-list .number {
+    background-color: lightgray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    height: 60px;
+    width: 60px;
+}
+
+.draggable-list li.over .draggable {
+    background-color: #8cd5ff;
+}
+
+.draggable-list .brique-name {
+    margin: 0 20px 0 0;
+}
+
+.draggable {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    flex: 1;
+}

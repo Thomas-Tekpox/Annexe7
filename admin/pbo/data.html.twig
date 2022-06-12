@@ -1,0 +1,14 @@
+
+{
+  "data": [
+{% for data in datas %}
+    [
+        {% for col in data %}
+                "{{ col  }}"  {% if not loop.last %} , {% endif %} 
+        {% endfor %}
+    ] {% if not loop.last %} , {% endif %} 
+{% endfor %}
+  ], 
+  "recordsTotal": {{datas|length}},
+  "draw": {{draw}}
+}

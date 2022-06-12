@@ -1,0 +1,99 @@
+{% extends "admin/admin-base.html.twig" %}
+
+{% block content %}
+
+    <!-- .row -->
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card">
+            <div class="border-bottom title-part-padding d-flex flex-row justify-content-start align-items-center">
+                <h4 class="card-title mb-0">Gestion du site</h4>
+                <a href="{{ path('adminSitePageAdd') }}" class="btn px-4 rounded-pill btn-info mx-4"
+                    role="button">Créer une page</a>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive dataTables_wrapper">
+                    <table id="codePromoTable" class="table table-striped table-bordered text-nowrap">
+                        <thead>
+                            <!-- start row -->
+                            <tr>
+                                <th class="sorting">ID</th>
+                                <th class="sorting" style="width: 15%;">Nom</th>
+                                <th class="sorting" style="width: 6%;">URL</th>
+                                <th class="sorting" style="width: 6%;">Active</th>
+                                <th class="sorting">Options</th>
+                            </tr>
+                            <!-- end row -->
+                        </thead>
+                        <tbody>
+                            <!-- start row -->
+                            {% for page in pages %}
+                            <tr>
+                                <td>{{ page.id }}</td>
+                                <td style="width: 15%;">{{ page.nom }}</td>
+                                <td style="width: 6%;">{{ page.url }}</td>
+                                <td style="width: 6%;">{{ page.active }}</td>
+                                <td>
+                                    <a href="{{ path('adminSite', {'id': page.id}) }}"
+                                        class="btn px-2 rounded-pill btn-warning" role="button">Modifier</a>
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn px-2 rounded-pill btn-danger"
+                                        data-bs-toggle="modal" data-bs-target="#deletePageModal"
+                                        id="{{ page.id }}" onClick="returnBtn(this.id)"
+                                        onMouseOver="document.getElementById('IdPageDel').innerHTML={{ page.id }};">Supprimer</button>
+                                    {# Trouver solution pour passer l'id au modal et ensuite via le post ou via js #}
+                                </td>
+                            </tr>
+                            {% endfor %}
+                            <!-- end row -->
+                        </tbody>
+                        <tfoot>
+                            <!-- start row -->
+                            <tr>
+                                <th>ID</th>
+                                <th style="width: 15%;">Nom</th>
+                                <th style="width: 6%;">URL</th>
+                                <th style="width: 6%;">Active</th>
+                                <th>Options</th>
+                            </tr>
+                            <!-- end row -->
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /.row -->
+
+
+<script src="{{ asset('code/admin/js/custom/form-picker.js') }}"></script>
+
+
+<!-- Modal -->
+<div class="modal fade" id="deletePageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Etes-vous sûr de vouloir supprimer la page <span
+                        id="IdPageDel">xx</span> ?</h5>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Attention, la suppression est irréversible !
+            </div>
+            <div class="modal-footer">
+                <form class="form" method="post" action="">
+                    <button type="submit" class="btn px-2 rounded-pill btn-danger" id="deleteValidator" name="id"
+                        value="">Supprimer</button>
+                </form>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

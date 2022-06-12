@@ -1,0 +1,27 @@
+<div class="container">
+	<div class="row mt-5">
+		<img class="img-fluid" src="{{ asset(content.img.url) }}" alt="{{ content.img.alt }}">
+	</div>
+	<div class="row mt-5">
+		<div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+			<p class="text-justify display-3 fw-bold {{ content.moto.color }}">{{ content.moto.text }}</p>
+		</div>
+		<article class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+			<h2 class="{{ content.title.color }} fw-bold">{{ content.title.text }}</h2>
+			<div class="d-flex align-items-center gap-3 mb-4">
+				{% if content.svg.active == true %}
+				<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
+					class="bi bi-geo-alt-fill" viewbox="0 0 16 16">
+					<path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z">
+					</path>
+				</svg>
+				{% endif %}
+				<p class="h5 {{ content.subtitle.color }} pt-1">{{ content.subtitle.text }}</p>
+			</div>
+			<p class="{{ content.desc.color }}">{{ content.desc.text }}</p>
+			<button class="btn mt-3 mb-5 rounded-pill btn-outline-sb-blue-energy btn-outline-wide">
+				<span class="fw-bold h6 px-2">En savoir plus</span>
+			</button>
+		</article>
+	</div>
+</div>

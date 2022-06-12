@@ -1,0 +1,17 @@
+{% extends "front-office/base.html.twig" %}
+
+{% block navbar %}
+{% include "front-office/shared/_connexion.html.twig" %}
+{% include "front-office/shared/_navbar.html.twig" %}
+{% endblock %}
+
+{% block body %}
+
+{% include "front-office/shared/_footer.html.twig" %}
+
+{% endblock %}
+
+{% block script %}
+    <script src="{{ asset('code/front-office/js/custom/onScroll.js') }}"></script>
+    <script src="{{ asset('code/front-office/js/custom/multi-item.js') }}"></script>
+{% endblock %}

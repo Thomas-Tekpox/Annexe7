@@ -1,0 +1,309 @@
+{% extends "front-office/base.html.twig" %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('code/front-office/css/custom/carousel.css') }}">
+<link rel="stylesheet" href="{{ asset('code/front-office/css/custom/footer.css') }}">
+{% endblock %}
+
+{% block navbar %}
+{% include "front-office/shared/_connexion.html.twig" %}
+{% include "front-office/shared/_navbar-blue-energy.html.twig" %}
+{% endblock %}
+
+{% block body %}
+<!-- Main image carte cadeau -->
+<div class="container-fluid d-flex align-items-center" style="background-image: url({{ asset('ressources/img/gallery/Web1920_4.png') }}); height: 95vh;">
+    <div class="container">
+        <div class="row d-flex justify-content-end">
+            <div class="col-12 col-md-4 text-sb-white">
+                <h2>Carte cadeau</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit rem nihil eum, unde consequatur
+                    incidunt
+                    quos voluptate, accusantium dolorum nemo earum vero eligendi in autem voluptas! Soluta, sint.
+                    Repellendus, ullam officia animi molestiae quis nam.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- FIlArianne -->
+<div class="container my-5">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Library</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Data</li>
+        </ol>
+    </nav>
+</div>
+
+<!-- TextPart -->
+<div class="container mt-5">
+    <div class="row text-center d-flex justify-content-center">
+        <div class="col-md-6  col-12">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex ipsam enim exercitationem aut repudiandae
+                natus ut, expedita at inventore quasi reiciendis odio vitae maiores voluptatem. Lorem, ipsum dolor sit
+                amet consectetur adipisicing elit. Nam fugiat ipsum eum quos nulla placeat, error et. Nemo, dolores
+                corrupti!</p>
+        </div>
+    </div>
+</div>
+
+<!-- CarteCadeau -->
+<div class="container mt-5 d-flex justify-content-center align-items-center"
+    style="background-image: url({{ asset('ressources/img/gallery/blurCadeau.png') }}); height: 50vh;">
+    <div class="col-9 bg-sb-white opacity-50 p-5">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="fw-bold">Charger la e-carte cadeau</h2>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col">
+                <button type="button"
+                    class="btn rounded-pill btn-outline-sb-blue-energy btn-outline-wide px-4 fw-bold">50&euro;</button>
+            </div>
+            <div class="col">
+                <button type="button"
+                    class="btn rounded-pill btn-outline-sb-blue-energy btn-outline-wide px-4 fw-bold">100&euro;</button>
+            </div>
+            <div class="col">
+                <button type="button"
+                    class="btn rounded-pill btn-outline-sb-blue-energy btn-outline-wide px-4 fw-bold">150&euro;</button>
+            </div>
+            <div class="col">
+                <button type="button"
+                    class="btn rounded-pill btn-outline-sb-blue-energy btn-outline-wide px-4 fw-bold">200&euro;</button>
+            </div>
+            <div class="col">
+                <button type="button"
+                    class="btn rounded-pill btn-outline-sb-blue-energy btn-outline-wide px-4 fw-bold">250&euro;</button>
+            </div>
+            <div class="col">
+                <button type="button"
+                    class="btn rounded-pill btn-outline-sb-blue-energy btn-outline-wide px-4 fw-bold">300&euro;</button>
+            </div>
+            <div class="col">
+                <button type="button"
+                    class="btn rounded-pill btn-outline-sb-blue-energy btn-outline-wide px-4 fw-bold">350&euro;</button>
+            </div>
+            <div class="col">
+                <button type="button"
+                    class="btn rounded-pill btn-outline-sb-blue-energy btn-outline-wide px-4 fw-bold">400&euro;</button>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-5">
+                <h3>Montant libre</h3>
+            </div>
+            <div class="col-md-7 d-flex">
+                <h3>Total : </h3>
+                <p class="fs-3">150&euro;</p>
+                <button type="button" class="btn btn-sb-blue-energy rounded-pill mx-5 px-4 fw-bold">Ajouter au
+                    panier</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- BandeauBleu -->
+<div class="container-fluid bg-sb-blue-l mt-5">
+    <div class="container py-5">
+        <div class="row text-center">
+            <h2 class="text-sb-blue-energy fw-bold">Comment fonctionne la e-carte ?</h2>
+            <div class="col-md-4">
+                <img src="{{ asset('ressources/logo/logo_blanc.png') }}" height="50"
+                    alt="Logo du Studio Bontant en blanc">
+                <h3 class="text-sb-blue-energy">Anticipation</h3>
+                <p class="text-sb-blue-energy">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa error
+                    voluptas consectetur. Optio sint, harum ex sit cumque rerum sed doloremque, atque eligendi ipsam
+                    perferendis!</p>
+            </div>
+            <div class="col-md-4">
+                <img src="{{ asset('ressources/logo/logo_blanc.png') }}" height="50"
+                    alt="Logo du Studio Bontant en blanc">
+                <h3 class="text-sb-blue-energy">Anticipation</h3>
+                <p class="text-sb-blue-energy">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa error
+                    voluptas consectetur. Optio sint, harum ex sit cumque rerum sed doloremque, atque eligendi ipsam
+                    perferendis!</p>
+            </div>
+            <div class="col-md-4">
+                <img src="{{ asset('ressources/logo/logo_blanc.png') }}" height="50"
+                    alt="Logo du Studio Bontant en blanc">
+                <h3 class="text-sb-blue-energy">Anticipation</h3>
+                <p class="text-sb-blue-energy">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa error
+                    voluptas consectetur. Optio sint, harum ex sit cumque rerum sed doloremque, atque eligendi ipsam
+                    perferendis!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- PrestaParticuliers -->
+<div class="container mt-5">
+    <h2 class="text-sb-blue-energy fw-bold h3 pt-5 pb-3">Nos prestations pour les particuliers</h2>
+    <div id="partCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="cards-wrapper">
+                    <div class="card card-d3 bg-none border-none mb-2">
+                        <img src="/ressources/img/gallery/img_card.png" class="card-img-square-top custom-index"
+                            alt="...">
+                        <div class="card-body bg-sb-white card-body-rounded-bot light-shadow">
+                            <h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Shooting photo n°1</h5>
+                            <h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Groupe - famille</h5>
+                            <p class="card-text text-center text-sb-gray-d">à partir de 129€</p>
+                        </div>
+                    </div>
+                    <div class="card card-d3 bg-none border-none mb-2">
+                        <img src="/ressources/img/gallery/img_card.png" class="card-img-square-top custom-index"
+                            alt="...">
+                        <div class="card-body bg-sb-white card-body-rounded-bot light-shadow">
+                            <h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Shooting photo n°2</h5>
+                            <h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Groupe - famille</h5>
+                            <p class="card-text text-center text-sb-gray-d">à partir de 129€</p>
+                        </div>
+                    </div>
+                    <div class="card card-d3 bg-none border-none mb-2">
+                        <img src="/ressources/img/gallery/img_card.png" class="card-img-square-top custom-index"
+                            alt="...">
+                        <div class="card-body bg-sb-white card-body-rounded-bot light-shadow">
+                            <h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Shooting photo n°3</h5>
+                            <h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Groupe - famille</h5>
+                            <p class="card-text text-center text-sb-gray-d">à partir de 129€</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="cards-wrapper">
+                    <div class="card card-d3 bg-none border-none mb-2">
+                        <img src="/ressources/img/gallery/img_card.png" class="card-img-square-top custom-index"
+                            alt="...">
+                        <div class="card-body bg-sb-white card-body-rounded-bot light-shadow">
+                            <h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Shooting photo n°4</h5>
+                            <h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Groupe - famille</h5>
+                            <p class="card-text text-center text-sb-gray-d">à partir de 129€</p>
+                        </div>
+                    </div>
+                    <div class="card card-d3 bg-none border-none mb-2">
+                        <img src="/ressources/img/gallery/img_card.png" class="card-img-square-top custom-index"
+                            alt="...">
+                        <div class="card-body bg-sb-white card-body-rounded-bot light-shadow">
+                            <h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Shooting photo n°5</h5>
+                            <h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Groupe - famille</h5>
+                            <p class="card-text text-center text-sb-gray-d">à partir de 129€</p>
+                        </div>
+                    </div>
+                    <div class="card card-d3 bg-none border-none mb-2">
+                        <img src="/ressources/img/gallery/img_card.png" class="card-img-square-top custom-index"
+                            alt="...">
+                        <div class="card-body bg-sb-white card-body-rounded-bot light-shadow">
+                            <h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Shooting photo n°6</h5>
+                            <h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Groupe - famille</h5>
+                            <p class="card-text text-center text-sb-gray-d">à partir de 129€</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="cards-wrapper">
+                    <div class="card card-d3 bg-none border-none mb-2">
+                        <img src="/ressources/img/gallery/img_card.png" class="card-img-square-top custom-index"
+                            alt="...">
+                        <div class="card-body bg-sb-white card-body-rounded-bot light-shadow">
+                            <h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Shooting photo n°7</h5>
+                            <h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Groupe - famille</h5>
+                            <p class="card-text text-center text-sb-gray-d">à partir de 129€</p>
+                        </div>
+                    </div>
+                    <div class="card card-d3 bg-none border-none mb-2">
+                        <img src="/ressources/img/gallery/img_card.png" class="card-img-square-top custom-index"
+                            alt="...">
+                        <div class="card-body bg-sb-white card-body-rounded-bot light-shadow">
+                            <h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Shooting photo n°8</h5>
+                            <h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Groupe - famille</h5>
+                            <p class="card-text text-center text-sb-gray-d">à partir de 129€</p>
+                        </div>
+                    </div>
+                    <div class="card card-d3 bg-none border-none mb-2">
+                        <img src="/ressources/img/gallery/img_card.png" class="card-img-square-top custom-index"
+                            alt="...">
+                        <div class="card-body bg-sb-white card-body-rounded-bot light-shadow">
+                            <h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Shooting photo n°9</h5>
+                            <h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Groupe - famille</h5>
+                            <p class="card-text text-center text-sb-gray-d">à partir de 129€</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#partCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#partCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <div class="row mt-5 pt-4">
+        <div class="col-12 text-center fs-4">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus minima hic sapiente voluptatum cumque
+                autem pariatur facilis cupiditate nam veniam!</p>
+            <button class="btn py-2 px-4 my-4 rounded-pill btn-sb-blue-energy">
+                <span class="fw-bold fs-5">Voir tout</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- BandeauPhotobooth -->
+<div class="container-fluid bg-sb-blue-d mt-5">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="{{ asset('ressources/logo/logo_blanc.png') }}" height="125"
+                    alt="Logo du Studio Bontant en blanc">
+            </div>
+            <div class="col-md-6 text-sb-white">
+                <h3 class="fw-bold">Vous préparez un événement ?</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit temporibus architecto assumenda dicta
+                    suscipit ullam quas, voluptate ab, numquam earum, eum at debitis omnis labore. Sapiente eligendi
+                    asperiores itaque, cum nobis repellat quibusdam nemo amet?</p>
+                <button type="button" class="btn rounded-pill px-3 btn-sb-orange">En savoir plus</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- contactSection -->
+<div class="container mt-5">
+    <div class="row d-flex align-items-end justify-content-center pt-4">
+        <div class="col-12 col-md-5">
+            <p class="text-sb-gray-d fs-5">Vous avez une question ?</p>
+            <h4 class="text-sb-gray-d fs-3 fw-bold">N'hésitez pas à nous contacter !</h4>
+        </div>
+        <div class="col-12 col-md-5 pt-3 d-flex align-items-end">
+            <button class="btn rounded-pill btn-outline-sb-blue-energy btn-outline-wide mx-2">
+                <span class="fw-bold h6">Formulaire de contact</span>
+            </button>
+            <button class="btn btn-sb-orange text-sb-white rounded-pill mx-2 fs-5">
+                A
+            </button>
+            <button class="btn btn-success text-sb-white rounded-pill mx-2 fs-5">
+                A
+            </button>
+            <button class="btn btn-sb-blue-l text-sb-white rounded-pill mx-2 fs-5">
+                A
+            </button>
+        </div>
+    </div>
+</div>
+
+{% include "front-office/shared/_footer.html.twig" %}
+
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}

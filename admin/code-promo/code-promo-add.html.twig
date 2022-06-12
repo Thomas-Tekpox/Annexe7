@@ -1,0 +1,65 @@
+{% extends "admin/app-core.html.twig" %}
+
+{% form_theme formView _self %}
+
+{% block breadcrumb %}
+<li class="breadcrumb-item"><a href="#"></a>Promotions</li>
+<li class="breadcrumb-item"><a href="{{ path('adminCodePromo') }}">Gestion codes promo</a></li>
+<li class="breadcrumb-item active" aria-current="page"><a href="{{ path('adminCodePromoAdd') }}">Ajouter un code
+        promo</a></li>
+{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Ajouter un code promo</h4>
+        <h5 class="card-subtitle mb-3 border-bottom pb-3">
+            Saississez ci-dessous les informations requises pour la création d'un code promo.
+        </h5>
+
+        {{ form_start(formView) }}
+
+        {{ form_row(formView.DLC) }}
+
+        {{ form_row(formView.typePromo) }}
+
+        {{ form_row(formView.montant) }}
+
+        {{ form_row(formView.montantMinimum) }}
+
+        <div class="mb-3 row">
+            <ul class="list-inline">
+                {% for produit in produits %}
+                <li class="d-flex">
+                    <label for="form_quantite" class="col-md-2 col-form-label">{{ produit.Lbl }}</label>
+                    <div class="col-md-1">
+                        <input type="number" id="form_quantite" name="quantite{{ produit.ordreEligiblePromo }}"
+                            min="0" max="100" placeholder="0" class="form-control">
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        {{ form_row(formView.fraisDePortOfferts) }}
+
+        <button type="submit" class="btn px-4 rounded-pill btn-info">Ajouter</button>
+        <a href="{{ path('adminCodePromo') }}" class="btn px-4 rounded-pill btn-secondary mx-4 right"
+            role="button">Retour</a>
+
+        {{ form_end(formView) }}
+
+    </div>
+</div>
+{% endblock %}
+
+{% block form_row %}
+<div class="mb-3 row">
+    {{ form_label(form, null, {'label_attr': {'class': 'col-md-2 col-form-label'}}) }}
+    <div class="col-md-10">
+        {{ form_widget(form, {'attr': {'class': 'form-control'}}) }}
+        {{ form_errors(form) }}
+        {{ form_help(form) }}
+    </div>
+</div>
+{% endblock %}

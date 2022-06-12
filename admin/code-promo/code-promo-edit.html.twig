@@ -1,0 +1,94 @@
+{% extends "admin/app-core.html.twig" %}
+
+{% block breadcrumb %}
+    <li class="breadcrumb-item"><a href="#"></a>Promotions</li>
+    <li class="breadcrumb-item"><a href="{{ path('adminCodePromo') }}">Gestion codes promo</a></li>
+    <li class="breadcrumb-item active" aria-current="page"><a href="{{ path('adminCodePromoEdit') }}">Modifier un code promo</a></li>
+{% endblock %}
+
+{% block content %}
+<!-- Errors -->
+{% for msg in app.session.flashBag.get('error') %}
+<div class="alert alert-danger">
+    {{ msg }}
+</div>
+{% endfor %}
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Modifier un code promo</h4>
+        <h5 class="card-subtitle mb-3 border-bottom pb-3">
+            Saississez ci-dessous les informations requises pour la modification d'un code promo.
+        </h5>
+
+        <form class="form" method="post" action="edit">
+            <div class="mb-3 row">
+                <label for="form_DLC" class="col-md-2 col-form-label">Date limite de consommation</label>
+                <div class="col-md-10">
+                    <input class="form-control" type="date" id="form_DLC" name="DLC"
+                        value="{{ codepromo.DLC|date('Y-m-d') }}" required="required">
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="form_typePromo" class="col-md-2 col-form-label">Type de promotion</label>
+                <div class="col-md-10">
+                    <select class="form-select col-12" id="form_typePromo" name="typePromo" required="required">
+                        <option value="">Choisir...</option>
+                        <option value="e" {% if codepromo.typePromo == "e" %}selected{% endif %}>Euro &euro;
+                        </option>
+                        <option value="p" {% if codepromo.typePromo == "p" %}selected{% endif %}>Pourcentage
+                            %</option>
+                    </select>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="form_montant" class="col-md-2 col-form-label">Montant en &euro; ou %</label>
+                <div class="col-md-10">
+                    <input class="form-control" type="text" value="{{ codepromo.montant }}" id="form_montant"
+                        name="montant" required="required">
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="form_montantMin" class="col-md-2 col-form-label">Montant minimum en &euro;
+                    requis
+                    pour appliquer la promotion</label>
+                <div class="col-md-10">
+                    <input class="form-control" type="text" value="{{ codepromo.montantMinimum }}" id="form_montantMin"
+                        name="montantMinimum" required="required">
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="form_produits" class="col-md-2 col-form-label">Produits concerner par le code
+                    promo</label>
+            </div>
+            <div class="mb-3 row">
+                <ul class="list-inline">
+                    {% for produit in produits %}
+                    <li class="d-flex">
+                        <label for="form_quantite" class="col-md-2 col-form-label">{{ produit.Lbl }}</label>
+                        <div class="col-md-1">
+                            <input type="number" id="form_quantite" name="quantite{{ produit.ordreEligiblePromo }}"
+                                min="0" max="100" {% for pcp in pcps %}
+                                {% if (pcp.codePromo.id == codepromo.id) and (pcp.produit.id == produit.id) %}
+                                value="{{ pcp.quantite }}" {% else %} placeholder="0" {% endif %} {% endfor %}
+                                class="form-control">
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="mb-3 row">
+                <label for="form_fraisDePortOfferts" class="col-md-2 col-form-label">Frais de port
+                    offert</label>
+                <div class="col-md-10">
+                    <input type="checkbox" class="form-check-input" id="form_fraisDePortOfferts"
+                        name="fraisDePortOfferts" {% if codepromo.typePromo == "p" %}checked{% endif %} />
+                </div>
+            </div>
+            <input type="text" class="form-check-input" id="form_id" name="id" value="{{ codepromo.id }}" hidden />
+            <button type="submit" class="btn px-4 rounded-pill btn-info">Modifier</button>
+            <a href="{{ path('adminCodePromo') }}" class="btn px-4 rounded-pill btn-secondary mx-4 right"
+                role="button">Retour</a>
+        </form>
+    </div>
+</div>
+{% endblock %}

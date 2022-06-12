@@ -1,0 +1,288 @@
+{% extends "front-office/base.html.twig" %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('code/front-office/css/custom/carousel.css') }}">
+<link rel="stylesheet" href="{{ asset('code/front-office/css/custom/footer.css') }}">
+{% endblock %}
+
+{% block navbar %}
+{% include "front-office/shared/_connexion.html.twig" %}
+{% include "front-office/shared/_navbar-blue-d.html.twig" %}
+{% endblock %}
+
+{% block body %}
+<!-- BandeauImages -->
+<div class="container-fluid my-5 pt-5">
+    <div class="row">
+        <div class="col-4">
+            <img src="" alt="" class="img-fluid">
+        </div>
+        <div class="col-4">
+            <img src="" alt="" class="img-fluid">
+        </div>
+        <div class="col-4">
+            <img src="" alt="" class="img-fluid">
+        </div>
+    </div>
+</div>
+
+<!-- TitlePart -->
+<div class="container mt-5">
+    <div class="row text-center d-flex justify-content-center">
+        <div class="col-md-8  col-12">
+            <h1 class="text-sb-blue-d fw-bold">Nos presentations photographiques<br>pour les professionnels</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex ipsam enim exercitationem aut repudiandae
+                natus ut, expedita at inventore quasi reiciendis odio vitae maiores voluptatem.</p>
+        </div>
+    </div>
+</div>
+
+<!-- LogoCaroussel -->
+<div class="container mt-5">
+    <h2 class="text-sb-blue-d fw-bold h3 pt-5 pb-3">Ils nous ont fait confiance</h2>
+    <div id="partCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="cards-wrapper">
+                    <div class="cardcard card-d3 bg-none border-none mb-2">
+                        <img src="/ressources/img/gallery/img_card.png" class="card-img-square-top custom-index"
+                            alt="...">
+                        <div class="card-body bg-sb-white card-body-rounded-bot light-shadow">
+                            <h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Shooting photo n°1</h5>
+                            <h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Groupe - famille</h5>
+                            <p class="card-text text-center text-sb-gray-d">à partir de 129€</p>
+                        </div>
+                    </div>
+                    <div class="card card-d3 bg-none border-none mb-2">
+                        <img src="/ressources/img/gallery/img_card.png" class="card-img-square-top custom-index"
+                            alt="...">
+                        <div class="card-body bg-sb-white card-body-rounded-bot light-shadow">
+                            <h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Shooting photo n°2</h5>
+                            <h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Groupe - famille</h5>
+                            <p class="card-text text-center text-sb-gray-d">à partir de 129€</p>
+                        </div>
+                    </div>
+                    <div class="card card-d3 bg-none border-none mb-2">
+                        <img src="/ressources/img/gallery/img_card.png" class="card-img-square-top custom-index"
+                            alt="...">
+                        <div class="card-body bg-sb-white card-body-rounded-bot light-shadow">
+                            <h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Shooting photo n°3</h5>
+                            <h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Groupe - famille</h5>
+                            <p class="card-text text-center text-sb-gray-d">à partir de 129€</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="cards-wrapper">
+                    <div class="card card-d3 bg-none border-none mb-2">
+                        <img src="/ressources/img/gallery/img_card.png" class="card-img-square-top custom-index"
+                            alt="...">
+                        <div class="card-body bg-sb-white card-body-rounded-bot light-shadow">
+                            <h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Shooting photo n°4</h5>
+                            <h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Groupe - famille</h5>
+                            <p class="card-text text-center text-sb-gray-d">à partir de 129€</p>
+                        </div>
+                    </div>
+                    <div class="card card-d3 bg-none border-none mb-2">
+                        <img src="/ressources/img/gallery/img_card.png" class="card-img-square-top custom-index"
+                            alt="...">
+                        <div class="card-body bg-sb-white card-body-rounded-bot light-shadow">
+                            <h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Shooting photo n°5</h5>
+                            <h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Groupe - famille</h5>
+                            <p class="card-text text-center text-sb-gray-d">à partir de 129€</p>
+                        </div>
+                    </div>
+                    <div class="card card-d3 bg-none border-none mb-2">
+                        <img src="/ressources/img/gallery/img_card.png" class="card-img-square-top custom-index"
+                            alt="...">
+                        <div class="card-body bg-sb-white card-body-rounded-bot light-shadow">
+                            <h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Shooting photo n°6</h5>
+                            <h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Groupe - famille</h5>
+                            <p class="card-text text-center text-sb-gray-d">à partir de 129€</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="cards-wrapper">
+                    <div class="card card-d3 bg-none border-none mb-2">
+                        <img src="/ressources/img/gallery/img_card.png" class="card-img-square-top custom-index"
+                            alt="...">
+                        <div class="card-body bg-sb-white card-body-rounded-bot light-shadow">
+                            <h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Shooting photo n°7</h5>
+                            <h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Groupe - famille</h5>
+                            <p class="card-text text-center text-sb-gray-d">à partir de 129€</p>
+                        </div>
+                    </div>
+                    <div class="card card-d3 bg-none border-none mb-2">
+                        <img src="/ressources/img/gallery/img_card.png" class="card-img-square-top custom-index"
+                            alt="...">
+                        <div class="card-body bg-sb-white card-body-rounded-bot light-shadow">
+                            <h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Shooting photo n°8</h5>
+                            <h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Groupe - famille</h5>
+                            <p class="card-text text-center text-sb-gray-d">à partir de 129€</p>
+                        </div>
+                    </div>
+                    <div class="card card-d3 bg-none border-none mb-2">
+                        <img src="/ressources/img/gallery/img_card.png" class="card-img-square-top custom-index"
+                            alt="...">
+                        <div class="card-body bg-sb-white card-body-rounded-bot light-shadow">
+                            <h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Shooting photo n°9</h5>
+                            <h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Groupe - famille</h5>
+                            <p class="card-text text-center text-sb-gray-d">à partir de 129€</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#partCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#partCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+
+<!-- EN CONSTRUCTION -->
+<div class="container-fluid split-color mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-12">
+                <img src="#" alt="" class="img-fluid">
+            </div>
+            <div class="col-md-6 col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque aliquid architecto, laborum
+                            beatae incidunt error. Itaque adipisci at error placeat, totam odio harum modi esse corrupti
+                            nisi saepe porro eveniet libero magnam laborum soluta commodi.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid split-color mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-12">
+                <img src="#" alt="" class="img-fluid">
+            </div>
+            <div class="col-md-6 col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque aliquid architecto, laborum
+                            beatae incidunt error. Itaque adipisci at error placeat, totam odio harum modi esse corrupti
+                            nisi saepe porro eveniet libero magnam laborum soluta commodi.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid split-color mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-12">
+                <img src="#" alt="" class="img-fluid">
+            </div>
+            <div class="col-md-6 col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque aliquid architecto, laborum
+                            beatae incidunt error. Itaque adipisci at error placeat, totam odio harum modi esse corrupti
+                            nisi saepe porro eveniet libero magnam laborum soluta commodi.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid split-color mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-12">
+                <img src="#" alt="" class="img-fluid">
+            </div>
+            <div class="col-md-6 col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque aliquid architecto, laborum
+                            beatae incidunt error. Itaque adipisci at error placeat, totam odio harum modi esse corrupti
+                            nisi saepe porro eveniet libero magnam laborum soluta commodi.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MiniContact -->
+<div class="container mt-5">
+    <div class="row text-center d-flex justify-content-center">
+        <div class="col-md-8  col-12">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex ipsam enim exercitationem aut repudiandae
+                natus ut, expedita at inventore.</p>
+            <button class="btn rounded-pill btn-sb-orange" type="button">Contact</button>
+        </div>
+    </div>
+</div>
+
+<!-- BlueCrad -->
+<div class="container mt-5">
+    <div class="row d-flex justify-content-center">
+        <div class="p-5 col-7 bg-sb-blue-l">
+            <div class="row">
+                <div class="col-4">
+                    <img src="#" alt="">
+                </div>
+                <div class="col-8">
+                    <p><span class="fw-bold">Lorem ipsum dolor sit amet consectetur adipisicing elit.</span> Accusamus
+                        sint beatae voluptatem
+                        consectetur et dolore maiores, nostrum velit amet ad quam fuga nesciunt dolor tempore
+                        dignissimos! Dolores vitae a voluptatibus? Error voluptatibus nesciunt facilis repellendus
+                        possimus accusantium amet ipsam suscipit!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- contactSection -->
+<div class="container mt-5">
+    <div class="row d-flex align-items-end justify-content-center pt-4">
+        <div class="col-12 col-md-5">
+            <p class="text-sb-gray-d fs-5">Vous avez une question ?</p>
+            <h4 class="text-sb-gray-d fs-3 fw-bold">N'hésitez pas à nous contacter !</h4>
+        </div>
+        <div class="col-12 col-md-5 pt-3 d-flex align-items-end">
+            <button class="btn rounded-pill btn-outline-sb-blue-energy btn-outline-wide mx-2">
+                <span class="fw-bold h6">Formulaire de contact</span>
+            </button>
+            <button class="btn btn-sb-orange text-sb-white rounded-pill mx-2 fs-5">
+                A
+            </button>
+            <button class="btn btn-success text-sb-white rounded-pill mx-2 fs-5">
+                A
+            </button>
+            <button class="btn btn-sb-blue-l text-sb-white rounded-pill mx-2 fs-5">
+                A
+            </button>
+        </div>
+    </div>
+</div>
+
+{% include "front-office/shared/_footer.html.twig" %}
+
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}

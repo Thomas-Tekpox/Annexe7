@@ -1,0 +1,49 @@
+{% extends "front-office/base.html.twig" %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('code/front-office/css/custom/carousel.css') }}">
+    <link rel="stylesheet" href="{{ asset('code/front-office/css/custom/footer.css') }}">
+{% endblock %}
+
+{% block navbar %}
+{% include "front-office/shared/_navbar.html.twig" %}
+{% endblock %}
+
+{% block body %}
+<!-- Carousel -->
+{% include "briques/_carrousel.html.twig" %}
+
+<!-- bandeau remise -->
+{% include "briques/_bandeau-remise.html.twig" %}
+
+<!-- Main content -->
+{% include "briques/_description.html.twig" with {"content": description} %}
+
+<!-- Bandeau bleu -->
+{% include "briques/_bandeau-bleu.html.twig" with {"content": bandeauBleu} %}
+
+<!-- Presta particuliers -->
+{% include "briques/_carrousel-particulier.html.twig" %}
+
+<!-- Coffret personnalisé -->
+{% include "briques/_coffret-personnalise.html.twig" %}
+
+<!-- Presta professionnels -->
+{% include "briques/_carrousel-pro.html.twig" %}
+
+<!-- Bandeau info -->
+{% include "briques/_bandeau-info.html.twig" %}
+
+<!-- Avis google -->
+{% include "briques/_avis-google.html.twig" %}
+
+<!-- contact section -->
+{% include "briques/_contact.html.twig" %}
+
+{% include "front-office/shared/_footer.html.twig" %}
+
+{% endblock %}
+
+{% block scripts %}    
+    <script src="{{ asset('code/front-office/js/custom/onScroll.js') }}"></script>
+{% endblock %}

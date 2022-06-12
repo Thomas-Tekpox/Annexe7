@@ -1,0 +1,131 @@
+{% extends "admin/admin-base.html.twig" %}
+
+
+
+{% form_theme formView _self %}
+
+
+
+{% block stylesheets %}
+
+{% endblock %}
+
+
+
+{% block content %}
+<div class="container-fluid">
+    <!-- -------------------------------------------------------------- -->
+    <!-- Start Page Content -->
+    <!-- -------------------------------------------------------------- -->
+    <!-- .row -->
+    <div class="row">
+        <div class="col-sm-12">
+            <!-- ---------------------
+                            start Default Basic Forms
+                        ---------------- -->
+            <!-- Errors -->
+            {% for msg in app.session.flashBag.get('error') %}
+            <div class="alert alert-danger">
+                {{ msg }}
+            </div>
+            {% endfor %}
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Ajouter un code promo</h4>
+                    <h5 class="card-subtitle mb-3 border-bottom pb-3">
+                        Saississez ci-dessous les informations requises pour la création d'un code promo.
+                    </h5>
+
+                    <form class="form" method="post" action="add">
+                        <div class="mb-3 row">
+                            <label for="form_DLC" class="col-md-2 col-form-label">Date limite de consommation</label>
+                            <div class="col-md-10">
+                                <input class="form-control" type="date" id="form_DLC" name="DLC" required="required">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="form_typePromo" class="col-md-2 col-form-label">Type de promotion</label>
+                            <div class="col-md-10">
+                                <select class="form-select col-12" id="form_typePromo" name="typePromo"
+                                    required="required">
+                                    <option value="e">Euro &euro;</option>
+                                    <option value="p">Pourcentage %</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="form_montant" class="col-md-2 col-form-label">Montant en &euro; ou %</label>
+                            <div class="col-md-10">
+                                <input class="form-control" type="text" placeholder="10" id="form_montant"
+                                    name="montant" required="required">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="form_montantMin" class="col-md-2 col-form-label">Montant minimum en &euro;
+                                requis
+                                pour appliquer la promotion</label>
+                            <div class="col-md-10">
+                                <input class="form-control" type="text" placeholder="10" id="form_montantMin"
+                                    name="montantMinimum" required="required">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="form_produits" class="col-md-2 col-form-label">Produits concerners par le code
+                                promo</label>
+                        </div>
+                        <div class="mb-3 row">
+                            <ul class="list-inline">
+                                {% for produit in produits %}
+                                <li class="d-flex">
+                                    <label for="form_quantite" class="col-md-2 col-form-label">{{ produit.Lbl }}</label>
+                                    <div class="col-md-1">
+                                        <input type="number" id="form_quantite" name="quantite{{ produit.ordreEligiblePromo }}" min="0" max="100"
+                                            placeholder="0" class="form-control">
+                                    </div>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="form_fraisDePortOfferts" class="col-md-2 col-form-label">Frais de port
+                                offert</label>
+                            <div class="col-md-10">
+                                <input type="checkbox" class="form-check-input" id="form_fraisDePortOfferts"
+                                    name="fraisDePortOfferts" />
+                            </div>
+                        </div>
+                        <button type="submit" class="btn px-4 rounded-pill btn-info">Ajouter</button>
+                        <a href="{{ path('adminCodePromo') }}" class="btn px-4 rounded-pill btn-secondary mx-4 right"
+                            role="button">Retour</a>
+                    </form>
+
+                </div>
+            </div>
+            <!-- ---------------------
+                            end Default Basic Forms
+                        ---------------- -->
+        </div>
+    </div>
+    <!-- /.row -->
+    <!-- -------------------------------------------------------------- -->
+    <!-- End PAge Content -->
+    <!-- -------------------------------------------------------------- -->
+</div>
+
+
+{# <script src="bootstrap-input-spinner.js"></script>
+<script>
+    $("input[type='number']").inputSpinner()
+</script> #}
+{% endblock %}
+
+{% block form_row %}
+<div class="mb-3 row">
+    {{ form_label(form, null, {'label_attr': {'class': 'col-md-2 col-form-label'}}) }}
+    <div class="col-md-10">
+        {{ form_widget(form, {'attr': {'class': 'form-control'}}) }}
+        {{ form_errors(form) }}
+        {{ form_help(form) }}
+    </div>
+</div>
+{% endblock %}

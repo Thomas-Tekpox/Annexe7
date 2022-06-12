@@ -1,0 +1,15 @@
+.bg-gradient-custom {
+    background: linear-gradient(130deg, var(--bs-sb-blue-middle) 60%, rgb(75, 111, 255));
+}
+
+footer::before {
+    content: '';
+    display: block;
+    /* position: absolute; */
+    width: 100%;
+    height: 200px;
+    right: 0;
+    top: 0;
+    background-color: var(--bs-sb-white);
+    clip-path: ellipse(61.36% 62.27% at 49.17% 4%);
+}

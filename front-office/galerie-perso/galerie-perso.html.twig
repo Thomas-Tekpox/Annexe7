@@ -1,0 +1,98 @@
+{% extends "front-office/base.html.twig" %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('code/front-office/css/custom/footer.css') }}">
+{% endblock %}
+
+{% block navbar %}
+{% include "front-office/shared/_connexion.html.twig" %}
+{% include "front-office/shared/_navbar-blue-energy.html.twig" %}
+{% endblock %}
+
+{% block body %}
+
+<!-- Date -->
+<div class="container">
+    <div class="row mt-5 pt-5">
+        <div class="col-12">
+            <h1 class="text-sb-blue-energy fw-bold">Mon shooting photo du 00/00/0000</h1>
+        </div>
+    </div>
+</div>
+
+<!-- Options -->
+<div class="container">
+    <div class="row mt-5 bg-sb-gray-l d-flex align-items-center justify-content-center p-3">
+        <div class="col">
+            <p><span class="fw-bold">Mode sélection</span><br>2 photos sélectionnées</p>
+        </div>
+        <div class="col">
+            <div class="btn btn-sb-blue-energy rounded-pill text-sb-white fw-bold">Ajouter au panier</div>
+        </div>
+        <div class="col">
+            <p>Mettre dans un dossier</p>
+        </div>
+        <div class="col">
+            <p>Téléchargement</p>
+        </div>
+        <div class="col">
+            <p>Supprimer</p>
+        </div>
+        <div class="col">
+            <p>Annuler</p>
+        </div>
+    </div>
+</div>
+
+<!-- Photos -->
+<div class="container">
+    <div class="row d-flex flex-wrap">
+        <div class="col-12 gallery">
+            <img src="{{ asset('ressources/img/gallery/Jade-0005.webp') }}" alt="">
+            <img src="{{ asset('ressources/img/gallery/2016-02-19_18-02_CAA_4728.jpg') }}" alt="">
+            <img src="{{ asset('ressources/img/gallery/2016-02-19_18-02_CAA_4728.jpg') }}" alt="">
+            <img src="{{ asset('ressources/img/gallery/2016-02-19_18-02_CAA_4728.jpg') }}" alt="">
+            <img src="{{ asset('ressources/img/gallery/Jade-0005.webp') }}" alt="">
+            <img src="{{ asset('ressources/img/gallery/Jade-0005.webp') }}" alt="">
+            <img src="{{ asset('ressources/img/gallery/Jade-0005.webp') }}" alt="">
+            <img src="{{ asset('ressources/img/gallery/Jade-0005.webp') }}" alt="">
+            <img src="{{ asset('ressources/img/gallery/2016-02-19_18-02_CAA_4728.jpg') }}" alt="">
+            <img src="{{ asset('ressources/img/gallery/Jade-0005.webp') }}" alt="">
+            <img src="{{ asset('ressources/img/gallery/2016-02-19_18-02_CAA_4728.jpg') }}" alt="">
+        </div>
+        <div class="col-12 gallery">
+            <img src="{{ asset('ressources/img/gallery/Jade-0005.webp') }}" alt="">
+            <img src="{{ asset('ressources/img/gallery/2016-02-19_18-02_CAA_4728.jpg') }}" alt="">
+            <img src="{{ asset('ressources/img/gallery/2016-02-19_18-02_CAA_4728.jpg') }}" alt="">
+            <img src="{{ asset('ressources/img/gallery/Jade-0005.webp') }}" alt="">
+            <img src="{{ asset('ressources/img/gallery/2016-02-19_18-02_CAA_4728.jpg') }}" alt="">
+            <img src="{{ asset('ressources/img/gallery/Jade-0005.webp') }}" alt="">
+            <img src="{{ asset('ressources/img/gallery/Jade-0005.webp') }}" alt="">
+            <img src="{{ asset('ressources/img/gallery/2016-02-19_18-02_CAA_4728.jpg') }}" alt="">
+            <img src="{{ asset('ressources/img/gallery/Jade-0005.webp') }}" alt="">
+            <img src="{{ asset('ressources/img/gallery/2016-02-19_18-02_CAA_4728.jpg') }}" alt="">
+            <img src="{{ asset('ressources/img/gallery/Jade-0005.webp') }}" alt="">
+            <img src="{{ asset('ressources/img/gallery/Jade-0005.webp') }}" alt="">
+            <img src="{{ asset('ressources/img/gallery/Jade-0005.webp') }}" alt="">
+        </div>
+        <div class="col-12 gallery">
+            <img src="{{ asset('ressources/img/gallery/2016-02-19_18-02_CAA_4728.jpg') }}" alt="">
+            <img src="{{ asset('ressources/img/gallery/Jade-0005.webp') }}" alt="">
+            <img src="{{ asset('ressources/img/gallery/2016-02-19_18-02_CAA_4728.jpg') }}" alt="">
+            <img src="{{ asset('ressources/img/gallery/2016-02-19_18-02_CAA_4728.jpg') }}" alt="">
+            <img src="{{ asset('ressources/img/gallery/Jade-0005.webp') }}" alt="">
+            <img src="{{ asset('ressources/img/gallery/2016-02-19_18-02_CAA_4728.jpg') }}" alt="">
+            <img src="{{ asset('ressources/img/gallery/Jade-0005.webp') }}" alt="">
+            <img src="{{ asset('ressources/img/gallery/2016-02-19_18-02_CAA_4728.jpg') }}" alt="">
+            <img src="{{ asset('ressources/img/gallery/2016-02-19_18-02_CAA_4728.jpg') }}" alt="">
+        </div>
+    </div>
+</div>
+
+{% include "front-office/shared/_footer.html.twig" %}
+
+{% endblock %}
+
+{% block scripts %}
+
+{% endblock %}

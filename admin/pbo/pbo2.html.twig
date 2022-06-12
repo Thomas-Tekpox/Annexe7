@@ -1,0 +1,12 @@
+<h1>Affichage maitre détail Carte cadeau</h1>
+
+<ul>
+ {% for cp in CodesPromo %}
+<li> {{ cp.code }}
+    <ul>
+        {% for pcp in cp.getProduit %}
+            <li><strong>{{ pcp.quantite  }}</strong>  {{ pcp.getProduit.lbl }} </li>
+        {% endfor %}
+    </ul>
+{% endfor %}
+</ul>

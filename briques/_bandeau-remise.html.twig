@@ -1,0 +1,11 @@
+{% if app.user %}
+{% else %}
+<div class="container-fluid bg-sb-gray-l">
+	<div class="row">
+		<div class="col-12 text-center pt-3">
+			<p class="text-black"><span class="fw-bold">20%</span> de remise sur les photos en famille</p>
+			{# {{ remise }} #}
+		</div>
+	</div>
+</div>
+{% endif %}

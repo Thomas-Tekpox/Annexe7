@@ -1,0 +1,99 @@
+{% extends "admin/app-core.html.twig" %}
+
+{% block stylesheets %}
+    <link href="{{ asset('code/admin/admin-bootstrap-pack/assets/extra-libs/datatables.net-bs4/css/dataTables.bootstrap4.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block breadcrumb %}
+    <li class="breadcrumb-item"><a href="#"></a>Promotions</li>
+    <li class="breadcrumb-item active" aria-current="page"><a href="{{ path('adminCarteCadeau') }}">Gestion cartes cadeau</a></li>
+{% endblock %}
+
+{% block content %}
+<!-- Success -->
+{% for msg in app.session.flashBag.get('success') %}
+<div class="alert alert-success">
+    {{ msg }}
+</div>
+{% endfor %}
+<!-- DataTables -->
+<div class="card">
+    <div class="border-bottom title-part-padding d-flex flex-row justify-content-start align-items-center">
+        <h4 class="card-title mb-0">Cartes Cadeau</h4>
+        <a href="{{ path('adminCarteCadeauAdd') }}" class="btn px-4 rounded-pill btn-info mx-4" role="button">Ajouter
+            une carte cadeau</a>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table id="zero_config" class="table table-striped table-bordered no-wrap">
+                <thead>
+                    <!-- start row -->
+                    <tr>
+                        <th class="sorting">ID cc</th>
+                        <th class="sorting">Code chèque</th>
+                        <th class="sorting">ID user</th>
+                        <th class="sorting">Nom user</th>
+                        <th class="sorting">Montant</th>
+                        <th class="sorting">Solde</th>
+                        <th class="sorting">dateC</th>
+                        <th class="sorting">DLC</th>
+                        <th class="sorting">dateM</th>
+                        <th class="sorting">divers</th>
+                        <th>Options</th>
+                    </tr>
+                    <!-- end row -->
+                </thead>
+                <tbody>
+                    <!-- start row -->
+                    {% for cartecadeau in cartesCadeau %}
+                    <tr>
+                        <td>{{ cartecadeau.id }}</td>
+                        <td>{{ cartecadeau.codeCheque }}</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>{{ cartecadeau.montant }}&euro;</td>
+                        <td>{{ cartecadeau.solde }}&euro;</td>
+                        <td>{{ cartecadeau.dateC|date("d/m/Y") }}</td>
+                        <td>{{ cartecadeau.DLC|date("d/m/Y") }}</td>
+                        <td>{{ cartecadeau.dateM|date("d/m/Y") }}</td>
+                        <td>{{ cartecadeau.divers }}</td>
+                        <td>
+                            <a href="{{ path('adminCarteCadeauEdit', {'id': cartecadeau.id}) }}"
+                                class="btn px-2 rounded-pill btn-warning" role="button">Modifier</a>
+                            <a href="#" class="btn px-2 rounded-pill btn-danger" role="button">Supprimer</a>
+                            {# double vérification avant suppression ? Via un modal ? #}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    <!-- end row -->
+                </tbody>
+                <tfoot>
+                    <!-- start row -->
+                    <tr>
+                        <th>ID cc</th>
+                        <th>Code chèque</th>
+                        <th>ID user</th>
+                        <th>Nom user</th>
+                        <th>Montant</th>
+                        <th>Solde</th>
+                        <th>dateC</th>
+                        <th>dateM</th>
+                        <th>DLC</th>
+                        <th>divers</th>
+                        <th>Options</th>
+                    </tr>
+                    <!-- end row -->
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ asset('code/admin/admin-bootstrap-pack/assets/extra-libs/datatables.net/js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('code/admin/admin-bootstrap-pack/dist/js/pages/datatable/datatable-basic.init.js') }}"></script>
+<script type="text/javascript">
+    $('#zero_config').DataTable();
+</script>
+{% endblock %}

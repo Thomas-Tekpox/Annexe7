@@ -1,0 +1,42 @@
+{% extends "front-office/base.html.twig" %}
+
+
+
+{% block stylesheets %}
+{% endblock %}
+
+
+
+{% block navbar %}
+{% include "front-office/shared/_navbar.html.twig" %}
+{% endblock %}
+
+{% block title %}Studio Bontant | Connexion{% endblock %}
+
+{% block body %}
+<trigger></trigger>
+
+<div class="container-fluid bg-white mt-5 pt-5  ">
+    <div class="row">
+        <h1>Connexion</h1>
+        <div class="col-12 text-black">
+            {{ form_start(formView) }}
+
+            {{ form_widget(formView) }}
+
+            <label>
+                <input type="checkbox" name="_remember_me"/>Rester connecté pendant 30 jours
+            </label>
+
+            <button type="submit" class="btn btn-success">Connexion</button>
+
+            {{ form_end(formView) }}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block script %}
+<script src="{{ asset('code/front-office/js/custom/onScroll.js') }}"></script>
+{% endblock %}

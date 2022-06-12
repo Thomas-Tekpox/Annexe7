@@ -1,0 +1,140 @@
+{% extends "front-office/base.html.twig" %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('code/front-office/css/custom/footer.css') }}">
+{% endblock %}
+
+{% block navbar %}
+{% include "front-office/shared/_connexion.html.twig" %}
+{% include "front-office/shared/_navbar.html.twig" %}
+{% endblock %}
+
+{% block body %}
+<trigger></trigger>
+<!-- Carte -->
+<div class="container my-5 pt-5">
+    <div class="row pt-5">
+        <div class="col col-xxl-5 col-xl-5 col-lg-5 col-md-12 col-sm-12 col-12">
+            <h1 class="fw-bold text-sb-blue-energy">Galerie</h1>
+            <p class="mt-5">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure porro natus quae, provident voluptatum
+                deleniti maiores earum, doloribus sapiente quos omnis hic velit consectetur laboriosam sint! Obcaecati
+                iure vero dolores reiciendis vitae! Dolor, consequatur voluptate.
+            </p>
+            <div class="row mt-3">
+                <div class="col-md-2 align-items-center d-flex">
+                    icône
+                </div>
+                <div class="col-md-8 text-left fw-bold">
+                    <p class="">
+                        7 Rue de citeaux
+                    </p>
+                    <p class="">
+                        75012 Paris
+                    </p>
+                </div>
+                <div class="col-md-2 align-items-center d-flex">
+                    i
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-2 align-items-center d-flex">
+                    icône
+                </div>
+                <div class="col-md-8 text-left">
+                    <p class="fw-bold">
+                        01 43 45 75 65
+                    </p>
+                    <p>
+                        Egalement joignable sur Signal
+                        et Whatsapp au 06 06 06 06 06
+                    </p>
+                </div>
+                <div class="col-md-2 align-items-center d-flex">
+                    i
+                </div>
+            </div>
+        </div>
+        <div class="col col-xxl-7 col-xl-7 col-lg-7 col-md-12 col-sm-12 col-12">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.57293055583!2d2.377758015911585!3d48.84728430944224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6720fb2514e1d%3A0xe179a1cab1062378!2s7%20Rue%20de%20C%C3%AEteaux%2C%2075012%20Paris!5e0!3m2!1sfr!2sfr!4v1650027297804!5m2!1sfr!2sfr"
+                width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+</div>
+
+<!-- FormContact -->
+<div class="container-fluid bg-sb-gray-l mt-5">
+    <div class="container py-5">
+        <div class="row text-center">
+            <h3 class="fw-bold">Formulaire de contact</h3>
+            <p>Nous vous répondons dans les plus bref délais !</p>
+        </div>
+        <form action="">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <input class="form-control" type="text" placeholder="Prénom">
+                    <hr>
+                </div>
+                <div class="col-12 col-md-6">
+                    <input class="form-control" type="text" placeholder="Nom">
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <input class="form-control" type="text" placeholder="Numéro de téléphone">
+                    <hr>
+                </div>
+                <div class="col-12 col-md-6">
+                    <input class="form-control" type="text" placeholder="Mail">
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <input class="form-control" type="textarea" placeholder="Message">
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <div class="col-12 col-md-4 col-sm-6">
+                    <button class="btn rounded-pill btn-sb-blue-energy" type="submit">Envoyer le message</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Info -->
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-6">
+            <h3 class="fw-bold text-sb-blue-energy">Accessibilité</h3>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo placeat necessitatibus libero error
+                sit soluta itaque omnis harum vitae aperiam quis dolorum, aspernatur assumenda, magni atque voluptas
+                dolores tempora accusamus maiores officia, sapiente vel.
+            </p>
+            <button type="button" class="btn rounded-pill btn-sb-gray-m px-4">En savoir plus</button>
+        </div>
+        <div class="col-md-6">
+            <h3 class="fw-bold text-sb-blue-energy">Parking</h3>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo placeat necessitatibus libero error
+                sit soluta itaque omnis harum vitae aperiam quis dolorum, aspernatur assumenda, magni atque voluptas
+                dolores tempora accusamus maiores officia, sapiente vel. Non sed illo cumque maxime quos explicabo
+                perferendis! Ad, temporibus a? Sit, architecto. Aspernatur consequatur dolor dignissimos et accusantium,
+                odio nulla inventore minus laborum, corporis nostrum.
+            </p>
+        </div>
+    </div>
+</div>
+
+{% include "front-office/shared/_footer.html.twig" %}
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ asset('code/front-office/js/custom/onScroll.js') }}"></script>
+{% endblock %}

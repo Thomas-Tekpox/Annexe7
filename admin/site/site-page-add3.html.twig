@@ -1,0 +1,136 @@
+{% extends "admin/admin-base.html.twig" %}
+
+
+
+{% form_theme formView _self %}
+
+
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{{ asset('code/admin/css/custom/custom.css') }}" />
+{% endblock %}
+
+
+
+{% block content %}
+
+<!-- .row -->
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card">
+            <div class="border-bottom title-part-padding d-flex flex-row justify-content-start align-items-center">
+                <h4 class="card-title mb-0">Création de page</h4>
+                <a href="{{ path('adminSiteBriqueAdd') }}" class="btn px-4 rounded-pill btn-info mx-4 disabled"
+                    role="button">Créer une brique</a>
+            </div>
+            <div class="card-body">
+                <h4 class="card-title">Ajouter une page</h4>
+                <h5 class="card-subtitle mb-3 border-bottom pb-3">
+                    Saississez ci-dessous les informations requises pour la création d'une page.
+                </h5>
+
+                {{ form_start(formView) }}
+
+                {{ form_row(formView.nom) }}
+
+                <div class="row">
+                    <div class="col-md-2">
+                        {{ form_label(formView.url) }}
+                        <h6 class="card-subtitle mb-4">Exemple : https://studiobontant/collection/<span
+                                class='fw-bold'>enfant<span></h6>
+                    </div>
+                    <div class="col-md-10">
+                        {{ form_errors(formView.url) }}
+                        {{ form_widget(formView.url) }}
+                        {{ form_help(formView.url) }}
+                    </div>
+                </div>
+
+                {{ form_row(formView.briques) }}
+
+                <div class="row">
+                    <div class="col-md-2">
+                        <label for="" class="col-form-label">Drag & Drop</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 d-flex justify-content-center">
+                        <div class="table-responsive dataTables_wrapper">
+                            <table id="page" class="table table-striped table-bordered text-nowrap">
+                                <thead>
+                                    <tr>
+                                        <th>nom</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>nom</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn px-4 rounded-pill btn-info">Ajouter</button>
+                <a href="{{ path('adminSitePageAdd') }}" class="btn px-4 rounded-pill btn-secondary mx-4 right"
+                    role="button">Retour</a>
+
+                {{ form_end(formView) }}
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /.row -->
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+<script type="text/javascript"
+    src="https://cdn.datatables.net/v/bs5/jq-3.6.0/jszip-2.5.0/dt-1.11.5/af-2.3.7/b-2.2.2/b-colvis-2.2.2/b-html5-2.2.2/b-print-2.2.2/date-1.1.2/fh-3.2.2/r-2.2.9/sb-1.3.2/sp-2.0.0/sl-1.3.4/datatables.min.js">
+</script>
+<script src="{{ asset('code/admin/js/custom/form-picker.js') }}"></script>
+<script src="{{ asset('code/admin/js/dataTables.rowReorder.js') }}"></script>
+
+<script>
+    $('#page').dataTable({
+        "ajax": "https://localhost:8000/admin/briques_data",
+        "columns": [{
+                "data": "nom"
+            },
+        ],
+        "serverSide": true,
+        rowReorder: {
+            selector: ':first-child',
+            update: false
+        }
+    });
+</script>
+
+{% endblock %}
+
+
+
+
+
+
+{% block form_row %}
+<div class="mb-3 row">
+    {{ form_label(form, null, {'label_attr': {'class': 'col-md-2 col-form-label'}}) }}
+    <div class="col-md-10">
+        {{ form_widget(form, {'attr': {'class': 'form-control'}}) }}
+        {{ form_errors(form) }}
+        {{ form_help(form) }}
+    </div>
+</div>
+{% endblock %}

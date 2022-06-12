@@ -1,0 +1,43 @@
+{% extends "front-office/base.html.twig" %}
+
+{% block title %}Studio Bontant | Inscription{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            {% for flash_error in app.flashes('verify_email_error') %}
+            <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+            {% endfor %}
+        </div>
+
+        <h1>Inscription</h1>
+
+        {{ form_start(registrationForm) }}
+        <div class="row">
+            <div class="col-md-6 col-12">
+                {{ form_row(registrationForm.nom) }}
+            </div>
+            <div class="col-md-6 col-12">
+                {{ form_row(registrationForm.prenom) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-12">
+                {{ form_row(registrationForm.mobile) }}
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-8 col-12">
+                {{ form_row(registrationForm.email) }}
+            </div>
+        </div>
+        {{ form_row(registrationForm.plainPassword, {
+            label: 'Password'
+        }) }}
+        {{ form_row(registrationForm.agreeTerms) }}
+
+        <button type="submit" class="btn">S'inscrire</button>
+        {{ form_end(registrationForm) }}
+    </div>
+</div>
+{% endblock %}

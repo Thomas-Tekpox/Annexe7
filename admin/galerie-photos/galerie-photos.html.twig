@@ -1,0 +1,91 @@
+{% extends "admin/app-core.html.twig" %}
+
+{% block stylesheets %}
+<link
+    href="{{ asset('code/admin/admin-bootstrap-pack/assets/extra-libs/datatables.net-bs4/css/dataTables.bootstrap4.css') }}"
+    rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<!-- Success -->
+{% for msg in app.session.flashBag.get('success') %}
+<div class="alert alert-success">
+    {{ msg }}
+</div>
+{% endfor %}
+<!-- DataTables -->
+<div class="card">
+    <div class="border-bottom title-part-padding d-flex flex-row justify-content-start align-items-center">
+        <h4 class="card-title mb-0">Galerie Photo n°{{ id }}</h4>
+        <a href="{{ path('adminPhotoAdd', {'id': id}) }}" class="btn px-4 rounded-pill btn-info mx-4" role="button">Ajouter une
+            photo</a>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table id="zero_config" class="table table-striped table-bordered no-wrap">
+                <thead>
+                    <!-- start row -->
+                    <tr>
+                        <th class="sorting">Id</th>
+                        <th class="sorting">Photo</th>
+                        <th class="sorting">Dimension X</th>
+                        <th class="sorting">Dimension Y</th>
+                        <th class="sorting">Visibilité</th>
+                        <th class="sorting">Actif</th>
+                        <th class="sorting">Ordre</th>
+                        <th class="sorting">File Date</th>
+                        <th>Options</th>
+                    </tr>
+                    <!-- end row -->
+                </thead>
+                <tbody>
+                    <!-- start row -->
+                    {% for galerie in galeries %}
+                    <tr>
+                        <td>{{ galerie.id }}</td>
+                        <td><img src="/galeries/images/{{ galerie.filedate | date("Y-m") }}/{{ galerie.imagename }}" alt="{{ galerie.alt }}" class="img-thumbnail"></td>
+                        <td>{{ galerie.dimensionX }}</td>
+                        <td>{{ galerie.dimensionY }}</td>
+                        <td>{{ galerie.visibilite }}</td>
+                        <td>{{ galerie.actif }}</td>
+                        <td>{{ galerie.ordre }}</td>
+                        <td>{{ galerie.fileDate|date('Y/m/d') }}</td>
+                        <td>
+                            <a href="#" class="btn px-2 rounded-pill btn-warning" role="button">Modifier</a>
+                            <a href="#" class="btn px-2 rounded-pill btn-danger" role="button">Supprimer</a>
+                            {# double vérification avant suppression ? Via un modal ? #}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    <!-- end row -->
+                </tbody>
+                <tfoot>
+                    <!-- start row -->
+                    <tr>
+                        <th>Id</th>
+                        <th>Photo</th>
+                        <th>Dimension X</th>
+                        <th>Dimension Y</th>
+                        <th>Visibilité</th>
+                        <th>Actif</th>
+                        <th>Ordre</th>
+                        <th>File Date</th>
+                        <th>Options</th>
+                    </tr>
+                    <!-- end row -->
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script
+    src="{{ asset('code/admin/admin-bootstrap-pack/assets/extra-libs/datatables.net/js/jquery.dataTables.min.js') }}">
+</script>
+<script src="{{ asset('code/admin/admin-bootstrap-pack/dist/js/pages/datatable/datatable-basic.init.js') }}"></script>
+<script type="text/javascript">
+    $('#zero_config').DataTable();
+</script>
+{% endblock %}

@@ -1,0 +1,670 @@
+{% extends "front-office/base.html.twig" %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('code/front-office/css/custom/carousel.css') }}">
+<link rel="stylesheet" href="{{ asset('code/front-office/css/custom/footer.css') }}">
+{% endblock %}
+
+{% block navbar %}
+{% include "front-office/shared/_navbar.html.twig" %}
+{% endblock %}
+
+{% block body %}
+<!-- MainCarousel -->
+<div id="mainCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+	<ol class="carousel-indicators">
+		<li data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active"></li>
+		<li data-bs-target="#mainCarousel" data-bs-slide-to="1" class=""></li>
+		<li data-bs-target="#mainCarousel" data-bs-slide-to="2" class=""></li>
+	</ol>
+	<div class="carousel-inner">
+		<div class="carousel-item active">
+			<img class="first-slide img-fluid" src="{{ asset('ressources/img/gallery/Web1920_2.png') }}"
+				alt="First Slide">
+			<div class="carousel-caption pb-5">
+				<div class="row pb-5 mb-5">
+					<div class="col-xxl-6 col-xl-6 col-lg-6 col-md-3 col-sm-2 col-1 pb-5 main-caption">
+						<img src="{{ asset('ressources/logo/logo_blanc.png') }}" height="250" alt="" class="mb-5">
+						<p class="h3 text-center">Vous avez trouvé</p>
+						<p class="h3 text-center">le photographe professionnel</p>
+						<p class="h3 text-center">qui va vous faire sourire</p>
+						<div class="row mt-5">
+							<p class="fw-bold text-sb-yellow">Shooting Groupe - Famille</p>
+							<div class="col-12">
+								<a href="#" class="pr-4">
+									<button
+										class="btn btn-sb-white rounded-pill hover-none-btn btn-outline-wide px-4 fw-bold">Voir
+										les coffrets</button>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="carousel-item">
+			<img class="second-slide img-fluid" src="{{ asset('ressources/img/gallery/Web1920_4.png') }}"
+				alt="Second-Slide">
+			<div class="carousel-caption pb-5">
+				<div class="row pb-5 mb-5">
+					<div class="col-xxl-6 col-xl-6 col-lg-6 col-md-3 col-sm-2 col-1 pb-5 main-caption">
+						<img src="{{ asset('ressources/logo/logo_blanc.png') }}" height="250" alt="" class="mb-5">
+						<p class="h3 text-center">Vous avez trouvé</p>
+						<p class="h3 text-center">le photographe professionnel</p>
+						<p class="h3 text-center">qui va vous faire sourire</p>
+						<div class="row mt-5">
+							<p class="fw-bold text-sb-yellow">Shooting Groupe - Famille</p>
+							<div class="col-12">
+								<a href="#" class="pr-4">
+									<button
+										class="btn btn-sb-white rounded-pill hover-none-btn btn-outline-wide px-4 fw-bold">Voir
+										les coffrets</button>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="carousel-item">
+			<img class="third-slide img-fluid" src="{{ asset('ressources/img/gallery/Web1920_6.png') }}"
+				alt="Third-Slide">
+			<div class="carousel-caption pb-5">
+				<div class="row pb-5 mb-5">
+					<div class="col-xxl-6 col-xl-6 col-lg-6 col-md-3 col-sm-2 col-1 pb-5 main-caption">
+						<img src="{{ asset('ressources/logo/logo_blanc.png') }}" height="250" alt="" class="mb-5">
+						<p class="h3 text-center">Vous avez trouvé</p>
+						<p class="h3 text-center">le photographe professionnel</p>
+						<p class="h3 text-center">qui va vous faire sourire</p>
+						<div class="row mt-5">
+							<p class="fw-bold text-sb-yellow">Shooting Groupe - Famille</p>
+							<div class="col-12">
+								<a href="#" class="pr-4">
+									<button
+										class="btn btn-sb-white rounded-pill hover-none-btn btn-outline-wide px-4 fw-bold">Voir
+										les coffrets</button>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- BandeauRemise -->
+{% if app.user %}
+{% else %}
+<div class="container-fluid bg-sb-gray-l">
+	<div class="row">
+		<div class="col-12 text-center pt-3">
+			<p class="text-black"><span class="fw-bold">20%</span> de remise sur les photos en famille</p>
+			{# {{ remise }} #}
+		</div>
+	</div>
+</div>
+{% endif %}
+
+<!-- MainContent -->
+<div class="container">
+	<div class="row mt-5">
+		<img class="img-fluid" src="{{ asset('ressources/img/gallery/img4.jpg') }}" alt="Photo du Studio Bontant">
+	</div>
+	<div class="row mt-5">
+		<div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+			<p class="text-justify display-3 fw-bold text-sb-orange">"Les souvenirs de demain sont faits
+				aujourd'hui"
+			</p>
+		</div>
+		<div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+			<h2 class="text-sb-blue-energy fw-bold">Bienvenue au Studio Bontant</h2>
+			<div class="d-flex align-items-center gap-3 mb-4">
+				<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
+					class="bi bi-geo-alt-fill" viewbox="0 0 16 16">
+					<path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z">
+					</path>
+				</svg>
+				<p class="h5 text-sb-blue-l pt-1">Paris 12 - Gare de Lyon</p>
+			</div>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus dignissimos laudantium, eaque nam
+				dolores nemo. Sit, eos possimus. Molestiae accusamus consequuntur recusandae quos, quia nemo harum
+				distinctio, voluptatem fugit ratione qui necessitatibus. Dolore, consequuntur! Tenetur dicta eius
+				repellat consequuntur, minus alias.</p>
+			<button class="btn mt-3 mb-5 rounded-pill btn-outline-sb-blue-energy btn-outline-wide">
+				<span class="fw-bold h6 px-2">En savoir plus</span>
+			</button>
+		</div>
+	</div>
+</div>
+
+<!-- BandeauBleu -->
+<div class="container-fluid bg-sb-blue-m">
+	<div class="container py-5">
+		<div class="row">
+			<div class="col-md-3">
+				<img src="{{ asset('ressources/logo/logo_blanc.png') }}" height="125"
+					alt="Logo du Studio Bontant en blanc">
+			</div>
+			<div class="col-md-4">
+				<p class="text-sb-white fs-3">C'est pas tous les jours qu'on a l'occasion de faire un shooting photo !
+				</p>
+			</div>
+			<div class="col-1"></div>
+			<div class="col-md-4">
+				<h2 class="text-sb-blue-energy h4 fw-bold">Notre objectif :</h2>
+				<p class="text-sb-white h2 fw-bold">que ce moment ne soit que du plaisir !</p>
+				<p class="text-sb-white fs-4 pt-2 fw-bold">Plaisir de <span class="text-sb-yellow">se trouver beau /
+						belle</span></p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- PrestaParticuliers -->
+<div class="container">
+	<h2 class="text-sb-blue-energy fw-bold h3 pt-5 pb-3">Nos prestations pour les particuliers</h2>
+	<div id="partCarousel" class="carousel slide" data-bs-ride="carousel">
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<div class="cards-wrapper">
+					<div class="card card-d3 bg-none border-none mb-2">
+                        <img src="/ressources/img/gallery/img_card.png" class="card-img-square-top custom-index"
+                            alt="...">
+                        <div class="card-body bg-sb-white card-body-rounded-bot light-shadow">
+                            <h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Shooting photo n°2</h5>
+                            <h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Groupe - famille</h5>
+                            <p class="card-text text-center text-sb-gray-d">à partir de 129€</p>
+                        </div>
+                    </div>
+					<div class="card card-d3 bg-none border-none mb-2">
+						<img src="/ressources/img/gallery/img_card.png" class="card-img-square-top custom-index"
+							alt="...">
+						<div class="card-body bg-sb-white card-body-rounded-bot light-shadow">
+							<h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Shooting photo n°2</h5>
+							<h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Groupe - famille</h5>
+							<p class="card-text text-center text-sb-gray-d">à partir de 129€</p>
+						</div>
+					</div>
+					<div class="card card-d3 bg-none border-none mb-2">
+						<img src="/ressources/img/gallery/img_card.png" class="card-img-square-top custom-index"
+							alt="...">
+						<div class="card-body bg-sb-white card-body-rounded-bot light-shadow">
+							<h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Shooting photo n°3</h5>
+							<h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Groupe - famille</h5>
+							<p class="card-text text-center text-sb-gray-d">à partir de 129€</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<div class="cards-wrapper">
+					<div class="card card-d3 bg-none border-none mb-2">
+						<img src="/ressources/img/gallery/img_card.png" class="card-img-square-top custom-index"
+							alt="...">
+						<div class="card-body bg-sb-white card-body-rounded-bot light-shadow">
+							<h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Shooting photo n°4</h5>
+							<h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Groupe - famille</h5>
+							<p class="card-text text-center text-sb-gray-d">à partir de 129€</p>
+						</div>
+					</div>
+					<div class="card card-d3 bg-none border-none mb-2">
+						<img src="/ressources/img/gallery/img_card.png" class="card-img-square-top custom-index"
+							alt="...">
+						<div class="card-body bg-sb-white card-body-rounded-bot light-shadow">
+							<h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Shooting photo n°5</h5>
+							<h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Groupe - famille</h5>
+							<p class="card-text text-center text-sb-gray-d">à partir de 129€</p>
+						</div>
+					</div>
+					<div class="card card-d3 bg-none border-none mb-2">
+						<img src="/ressources/img/gallery/img_card.png" class="card-img-square-top custom-index"
+							alt="...">
+						<div class="card-body bg-sb-white card-body-rounded-bot light-shadow">
+							<h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Shooting photo n°6</h5>
+							<h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Groupe - famille</h5>
+							<p class="card-text text-center text-sb-gray-d">à partir de 129€</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<div class="cards-wrapper">
+					<div class="card card-d3 bg-none border-none mb-2">
+						<img src="/ressources/img/gallery/img_card.png" class="card-img-square-top custom-index"
+							alt="...">
+						<div class="card-body bg-sb-white card-body-rounded-bot light-shadow">
+							<h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Shooting photo n°7</h5>
+							<h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Groupe - famille</h5>
+							<p class="card-text text-center text-sb-gray-d">à partir de 129€</p>
+						</div>
+					</div>
+					<div class="card card-d3 bg-none border-none mb-2">
+						<img src="/ressources/img/gallery/img_card.png" class="card-img-square-top custom-index"
+							alt="...">
+						<div class="card-body bg-sb-white card-body-rounded-bot light-shadow">
+							<h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Shooting photo n°8</h5>
+							<h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Groupe - famille</h5>
+							<p class="card-text text-center text-sb-gray-d">à partir de 129€</p>
+						</div>
+					</div>
+					<div class="card card-d3 bg-none border-none mb-2">
+						<img src="/ressources/img/gallery/img_card.png" class="card-img-square-top custom-index"
+							alt="...">
+						<div class="card-body bg-sb-white card-body-rounded-bot light-shadow">
+							<h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Shooting photo n°9</h5>
+							<h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Groupe - famille</h5>
+							<p class="card-text text-center text-sb-gray-d">à partir de 129€</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<button class="carousel-control-prev" type="button" data-bs-target="#partCarousel" data-bs-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Previous</span>
+		</button>
+		<button class="carousel-control-next" type="button" data-bs-target="#partCarousel" data-bs-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Next</span>
+		</button>
+	</div>
+</div>
+
+<!-- CoffretPersonnalisé -->
+<div class="container my-5 pt-1">
+	<div class="card bg-sb-white text-sb-white w-100">
+	<img class="card-img img-fluid" src="{{ asset('ressources/img/gallery/bandeau.jpg') }}" alt="#">
+		<div class="card-img-overlay d-flex justify-content-center align-items-center">
+			<h3 class="card-title fw-bold">Coffret personnalisé</h3>
+		</div>
+	</div>
+	<div class="row mt-5 pt-4">
+		<div class="col-12 text-center fs-4">
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus minima hic sapiente voluptatum cumque
+				autem pariatur facilis cupiditate nam veniam!</p>
+			<button class="btn py-2 px-4 my-4 rounded-pill btn-sb-blue-energy">
+				<span class="fw-bold fs-5">Voir tout</span>
+			</button>
+		</div>
+	</div>
+</div>
+
+<!-- PrestaProfessionnels -->
+<div class="container-fluid bg-sb-gray-l">
+	<div class="container py-5">
+		<h2 class="text-sb-blue-d fw-bold pt-3 pb-3">Nos prestations pour les particuliers</h2>
+		<div id="proCarousel" class="carousel slide pb-3" data-bs-ride="carousel">
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<div class="cards-wrapper">
+						<div class="card card-d3 bg-none border-none mb-2">
+							<img src="/ressources/img/gallery/img_card.png" class="card-img-square-top custom-index"
+								alt="...">
+							<div class="card-body bg-sb-white card-body-rounded-bot light-shadow">
+								<h5 class="card-title text-center fw-bold fs-4 text-sb-blue-d">Shooting photo n°1</h5>
+								<h5 class="card-title text-center fw-bold fs-4 text-sb-blue-d">Groupe - famille</h5>
+								<p class="card-text text-center text-sb-blue-d">à partir de 129€</p>
+							</div>
+						</div>
+						<div class="card card-d3 bg-none border-none mb-2">
+							<img src="/ressources/img/gallery/img_card.png" class="card-img-square-top custom-index"
+								alt="...">
+							<div class="card-body bg-sb-white card-body-rounded-bot light-shadow">
+								<h5 class="card-title text-center fw-bold fs-4 text-sb-blue-d">Shooting photo n°2</h5>
+								<h5 class="card-title text-center fw-bold fs-4 text-sb-blue-d">Groupe - famille</h5>
+								<p class="card-text text-center text-sb-blue-d">à partir de 129€</p>
+							</div>
+						</div>
+						<div class="card card-d3 bg-none border-none mb-2">
+							<img src="/ressources/img/gallery/img_card.png" class="card-img-square-top custom-index"
+								alt="...">
+							<div class="card-body bg-sb-white card-body-rounded-bot light-shadow">
+								<h5 class="card-title text-center fw-bold fs-4 text-sb-blue-d">Shooting photo n°3</h5>
+								<h5 class="card-title text-center fw-bold fs-4 text-sb-blue-d">Groupe - famille</h5>
+								<p class="card-text text-center text-sb-blue-d">à partir de 129€</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<div class="cards-wrapper">
+						<div class="card card-d3 bg-none border-none mb-2">
+							<img src="/ressources/img/gallery/img_card.png" class="card-img-square-top custom-index"
+								alt="...">
+							<div class="card-body bg-sb-white card-body-rounded-bot light-shadow">
+								<h5 class="card-title text-center fw-bold fs-4 text-sb-blue-d">Shooting photo n°4</h5>
+								<h5 class="card-title text-center fw-bold fs-4 text-sb-blue-d">Groupe - famille</h5>
+								<p class="card-text text-center text-sb-blue-d">à partir de 129€</p>
+							</div>
+						</div>
+						<div class="card card-d3 bg-none border-none mb-2">
+							<img src="/ressources/img/gallery/img_card.png" class="card-img-square-top custom-index"
+								alt="...">
+							<div class="card-body bg-sb-white card-body-rounded-bot light-shadow">
+								<h5 class="card-title text-center fw-bold fs-4 text-sb-blue-d">Shooting photo n°5</h5>
+								<h5 class="card-title text-center fw-bold fs-4 text-sb-blue-d">Groupe - famille</h5>
+								<p class="card-text text-center text-sb-blue-d">à partir de 129€</p>
+							</div>
+						</div>
+						<div class="card card-d3 bg-none border-none mb-2">
+							<img src="/ressources/img/gallery/img_card.png" class="card-img-square-top custom-index"
+								alt="...">
+							<div class="card-body bg-sb-white card-body-rounded-bot light-shadow">
+								<h5 class="card-title text-center fw-bold fs-4 text-sb-blue-d">Shooting photo n°6</h5>
+								<h5 class="card-title text-center fw-bold fs-4 text-sb-blue-d">Groupe - famille</h5>
+								<p class="card-text text-center text-sb-blue-d">à partir de 129€</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<div class="cards-wrapper">
+						<div class="card card-d3 bg-none border-none mb-2">
+							<img src="/ressources/img/gallery/img_card.png" class="card-img-square-top custom-index"
+								alt="...">
+							<div class="card-body bg-sb-white card-body-rounded-bot light-shadow">
+								<h5 class="card-title text-center fw-bold fs-4 text-sb-blue-d">Shooting photo n°7</h5>
+								<h5 class="card-title text-center fw-bold fs-4 text-sb-blue-d">Groupe - famille</h5>
+								<p class="card-text text-center text-sb-blue-d">à partir de 129€</p>
+							</div>
+						</div>
+						<div class="card card-d3 bg-none border-none mb-2">
+							<img src="/ressources/img/gallery/img_card.png" class="card-img-square-top custom-index"
+								alt="...">
+							<div class="card-body bg-sb-white card-body-rounded-bot light-shadow">
+								<h5 class="card-title text-center fw-bold fs-4 text-sb-blue-d">Shooting photo n°8</h5>
+								<h5 class="card-title text-center fw-bold fs-4 text-sb-blue-d">Groupe - famille</h5>
+								<p class="card-text text-center text-sb-blue-d">à partir de 129€</p>
+							</div>
+						</div>
+						<div class="card card-d3 bg-none border-none mb-2">
+							<img src="/ressources/img/gallery/img_card.png" class="card-img-square-top custom-index"
+								alt="...">
+							<div class="card-body bg-sb-white card-body-rounded-bot light-shadow">
+								<h5 class="card-title text-center fw-bold fs-4 text-sb-blue-d">Shooting photo n°9</h5>
+								<h5 class="card-title text-center fw-bold fs-4 text-sb-blue-d">Groupe - famille</h5>
+								<p class="card-text text-center text-sb-blue-d">à partir de 129€</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<button class="carousel-control-prev" type="button" data-bs-target="#proCarousel" data-bs-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Previous</span>
+			</button>
+			<button class="carousel-control-next" type="button" data-bs-target="#proCarousel" data-bs-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Next</span>
+			</button>
+		</div>
+	</div>
+</div>
+
+<!-- BandeauInfo -->
+<div class="container py-5">
+	<h2 class="fw-bold text-sb-gray-d py-2">Des photos pour le plaisir, ou pour tout usage !</h2>
+	<div class="row pb-2">
+		<p class="text-sb-gray-d fs-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. In, ratione ipsa, fuga
+			explicabo cumque nemo
+			illum harum quidem beatae doloremque odit.</p>
+	</div>
+	<div class="row">
+		<div class="col-12 col-sm-6 col-md-2 d-flex justify-content-center">
+			<img src="{{ asset('ressources/logo/logo_bleu.png') }}" height="125" alt="">
+		</div>
+		<div class="col-12 col-sm-6 col-md-2 d-flex justify-content-center">
+			<img src="{{ asset('ressources/logo/logo_bleu.png') }}" height="125" alt="">
+		</div>
+		<div class="col-12 col-sm-6 col-md-2 d-flex justify-content-center">
+			<img src="{{ asset('ressources/logo/logo_bleu.png') }}" height="125" alt="">
+		</div>
+		<div class="col-12 col-sm-6 col-md-2 d-flex justify-content-center">
+			<img src="{{ asset('ressources/logo/logo_bleu.png') }}" height="125" alt="">
+		</div>
+		<div class="col-12 col-sm-6 col-md-2 d-flex justify-content-center">
+			<img src="{{ asset('ressources/logo/logo_bleu.png') }}" height="125" alt="">
+		</div>
+		<div class="col-12 col-sm-6 col-md-2 d-flex justify-content-center">
+			<img src="{{ asset('ressources/logo/logo_bleu.png') }}" height="125" alt="">
+		</div>
+	</div>
+</div>
+
+<!-- AvisGoogle -->
+<div class="container bg-white my-5">
+	<div class="row mt-5 mb-3">
+		<div class="col-12 text-center">
+			<h2 class="h5 fw-bold text-sb-blue-energy">Merci pour les 4.8 * sur Google !</h2>
+			<p class="fw-bold text-sb-gray-d">Découvrez les avis de nos clients</p>
+		</div>
+	</div>
+	<div id="googleCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<div class="cards-wrapper">
+					<div class="card card-d3 bg-none border-none mb-2">
+						<img src="/ressources/img/gallery/img_card.png" class="card-img-square-top custom-index"
+							alt="...">
+						<div class="card-body bg-sb-white card-body-rounded-bot light-shadow">
+							<h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Marie & Stéphane 1</h5>
+							<h5 class="card-title text-center fs-4 text-sb-gray-d">Shooting grossesse</h5>
+							<div class="row justify-content-center pt-4">
+								<div class="col-10">
+									<p class="card-text text-left text-sb-gray-d">Lorem ipsum dolor sit, amet
+										consectetur
+										adipisicing elit. Et blanditiis ipsa repellendus ab accusantium. Rem debitis
+										aspernatur
+										vel vero officia incidunt sapiente voluptatum consectetur distinctio! Lorem
+										ipsum dolor sit, amet consectetur adipisicing elit. Praesentium quam deleniti
+										debitis perspiciatis corrupti repellat!</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card card-d3 bg-none border-none mb-2">
+						<img src="/ressources/img/gallery/img_card.png" class="card-img-square-top custom-index"
+							alt="...">
+						<div class="card-body bg-sb-white card-body-rounded-bot light-shadow">
+							<h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Marie & Stéphane 2</h5>
+							<h5 class="card-title text-center fs-4 text-sb-gray-d">Shooting grossesse</h5>
+							<div class="row justify-content-center pt-4">
+								<div class="col-10">
+									<p class="card-text text-left text-sb-gray-d">Lorem ipsum dolor sit, amet
+										consectetur
+										adipisicing elit. Et blanditiis ipsa repellendus ab accusantium. Rem debitis
+										aspernatur
+										vel vero officia incidunt sapiente voluptatum consectetur distinctio! Lorem
+										ipsum dolor sit, amet consectetur adipisicing elit. Praesentium quam deleniti
+										debitis perspiciatis corrupti repellat!</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card card-d3 bg-none border-none mb-2">
+						<img src="/ressources/img/gallery/img_card.png" class="card-img-square-top custom-index"
+							alt="...">
+						<div class="card-body bg-sb-white card-body-rounded-bot light-shadow">
+							<h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Marie & Stéphane 3</h5>
+							<h5 class="card-title text-center fs-4 text-sb-gray-d">Shooting grossesse</h5>
+							<div class="row justify-content-center pt-4">
+								<div class="col-10">
+									<p class="card-text text-left text-sb-gray-d">Lorem ipsum dolor sit, amet
+										consectetur
+										adipisicing elit. Et blanditiis ipsa repellendus ab accusantium. Rem debitis
+										aspernatur
+										vel vero officia incidunt sapiente voluptatum consectetur distinctio! Lorem
+										ipsum dolor sit, amet consectetur adipisicing elit. Praesentium quam deleniti
+										debitis perspiciatis corrupti repellat!</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<div class="cards-wrapper">
+					<div class="card card-d3 bg-none border-none mb-2">
+						<img src="/ressources/img/gallery/img_card.png" class="card-img-square-top custom-index"
+							alt="...">
+						<div class="card-body bg-sb-white card-body-rounded-bot light-shadow">
+							<h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Marie & Stéphane 4</h5>
+							<h5 class="card-title text-center fs-4 text-sb-gray-d">Shooting grossesse</h5>
+							<div class="row justify-content-center pt-4">
+								<div class="col-10">
+									<p class="card-text text-left text-sb-gray-d">Lorem ipsum dolor sit, amet
+										consectetur
+										adipisicing elit. Et blanditiis ipsa repellendus ab accusantium. Rem debitis
+										aspernatur
+										vel vero officia incidunt sapiente voluptatum consectetur distinctio! Lorem
+										ipsum dolor sit, amet consectetur adipisicing elit. Praesentium quam deleniti
+										debitis perspiciatis corrupti repellat!</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card card-d3 bg-none border-none mb-2">
+						<img src="/ressources/img/gallery/img_card.png" class="card-img-square-top custom-index"
+							alt="...">
+						<div class="card-body bg-sb-white card-body-rounded-bot light-shadow">
+							<h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Marie & Stéphane 5</h5>
+							<h5 class="card-title text-center fs-4 text-sb-gray-d">Shooting grossesse</h5>
+							<div class="row justify-content-center pt-4">
+								<div class="col-10">
+									<p class="card-text text-left text-sb-gray-d">Lorem ipsum dolor sit, amet
+										consectetur
+										adipisicing elit. Et blanditiis ipsa repellendus ab accusantium. Rem debitis
+										aspernatur
+										vel vero officia incidunt sapiente voluptatum consectetur distinctio! Lorem
+										ipsum dolor sit, amet consectetur adipisicing elit. Praesentium quam deleniti
+										debitis perspiciatis corrupti repellat!</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card card-d3 bg-none border-none mb-2">
+						<img src="/ressources/img/gallery/img_card.png" class="card-img-square-top custom-index"
+							alt="...">
+						<div class="card-body bg-sb-white card-body-rounded-bot light-shadow">
+							<h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Marie & Stéphane 6</h5>
+							<h5 class="card-title text-center fs-4 text-sb-gray-d">Shooting grossesse</h5>
+							<div class="row justify-content-center pt-4">
+								<div class="col-10">
+									<p class="card-text text-left text-sb-gray-d">Lorem ipsum dolor sit, amet
+										consectetur
+										adipisicing elit. Et blanditiis ipsa repellendus ab accusantium. Rem debitis
+										aspernatur
+										vel vero officia incidunt sapiente voluptatum consectetur distinctio! Lorem
+										ipsum dolor sit, amet consectetur adipisicing elit. Praesentium quam deleniti
+										debitis perspiciatis corrupti repellat!</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<div class="cards-wrapper">
+					<div class="card card-d3 bg-none border-none mb-2">
+						<img src="/ressources/img/gallery/img_card.png" class="card-img-square-top custom-index"
+							alt="...">
+						<div class="card-body bg-sb-white card-body-rounded-bot light-shadow">
+							<h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Marie & Stéphane 7</h5>
+							<h5 class="card-title text-center fs-4 text-sb-gray-d">Shooting grossesse</h5>
+							<div class="row justify-content-center pt-4">
+								<div class="col-10">
+									<p class="card-text text-left text-sb-gray-d">Lorem ipsum dolor sit, amet
+										consectetur
+										adipisicing elit. Et blanditiis ipsa repellendus ab accusantium. Rem debitis
+										aspernatur
+										vel vero officia incidunt sapiente voluptatum consectetur distinctio! Lorem
+										ipsum dolor sit, amet consectetur adipisicing elit. Praesentium quam deleniti
+										debitis perspiciatis corrupti repellat!</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card card-d3 bg-none border-none mb-2">
+						<img src="/ressources/img/gallery/img_card.png" class="card-img-square-top custom-index"
+							alt="...">
+						<div class="card-body bg-sb-white card-body-rounded-bot light-shadow">
+							<h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Marie & Stéphane 8</h5>
+							<h5 class="card-title text-center fs-4 text-sb-gray-d">Shooting grossesse</h5>
+							<div class="row justify-content-center pt-4">
+								<div class="col-10">
+									<p class="card-text text-left text-sb-gray-d">Lorem ipsum dolor sit, amet
+										consectetur
+										adipisicing elit. Et blanditiis ipsa repellendus ab accusantium. Rem debitis
+										aspernatur
+										vel vero officia incidunt sapiente voluptatum consectetur distinctio! Lorem
+										ipsum dolor sit, amet consectetur adipisicing elit. Praesentium quam deleniti
+										debitis perspiciatis corrupti repellat!</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card card-d3 bg-none border-none mb-2">
+						<img src="/ressources/img/gallery/img_card.png" class="card-img-square-top custom-index"
+							alt="...">
+						<div class="card-body bg-sb-white card-body-rounded-bot light-shadow">
+							<h5 class="card-title text-center fw-bold fs-4 text-sb-gray-d">Marie & Stéphane 9</h5>
+							<h5 class="card-title text-center fs-4 text-sb-gray-d">Shooting grossesse</h5>
+							<div class="row justify-content-center pt-4">
+								<div class="col-10">
+									<p class="card-text text-left text-sb-gray-d">Lorem ipsum dolor sit, amet
+										consectetur
+										adipisicing elit. Et blanditiis ipsa repellendus ab accusantium. Rem debitis
+										aspernatur
+										vel vero officia incidunt sapiente voluptatum consectetur distinctio! Lorem
+										ipsum dolor sit, amet consectetur adipisicing elit. Praesentium quam deleniti
+										debitis perspiciatis corrupti repellat!</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<button class="carousel-control-prev" type="button" data-bs-target="#googleCarousel" data-bs-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Previous</span>
+		</button>
+		<button class="carousel-control-next" type="button" data-bs-target="#googleCarousel" data-bs-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Next</span>
+		</button>
+	</div>
+</div>
+
+<!-- contactSection -->
+<div class="container mt-5">
+	<div class="row d-flex align-items-end justify-content-center pt-4">
+		<div class="col-12 col-md-5">
+			<p class="text-sb-gray-d fs-5">Vous avez une question ?</p>
+			<h4 class="text-sb-gray-d fs-3 fw-bold">N'hésitez pas à nous contacter !</h4>
+		</div>
+		<div class="col-12 col-md-5 pt-3 d-flex align-items-end">
+			<button class="btn rounded-pill btn-outline-sb-blue-energy btn-outline-wide mx-2">
+				<span class="fw-bold h6">Formulaire de contact</span>
+			</button>
+			<button class="btn btn-sb-orange text-sb-white rounded-pill mx-2 fs-5">
+				A
+			</button>
+			<button class="btn btn-success text-sb-white rounded-pill mx-2 fs-5">
+				A
+			</button>
+			<button class="btn btn-sb-blue-l text-sb-white rounded-pill mx-2 fs-5">
+				A
+			</button>
+		</div>
+	</div>
+</div>
+
+{% include "front-office/shared/_footer.html.twig" %}
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ asset('code/front-office/js/custom/onScroll.js') }}"></script>
+{% endblock %}
